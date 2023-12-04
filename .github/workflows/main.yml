@@ -1,4 +1,4 @@
-name: Deploy Lighthouse Reports
+name: Lighthouse Reports
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v2
         with:
-          node-version: '14' 
+          node-version: '18' 
 
       - name: Install dependencies
         run: npm install
