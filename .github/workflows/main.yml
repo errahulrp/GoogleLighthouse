@@ -3,7 +3,7 @@ name: Lighthouse Reports
 on:
   push:
     branches:
-      - main  
+      - main
 
 jobs:
   deploy:
@@ -16,17 +16,26 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v2
         with:
-          node-version: '18'
+          node-version: '18' 
 
       - name: Install dependencies
         run: npm install
 
-      - name: Run Lighthouse script
-        run: npm start
+      - name: Run Lighthouse script and generate reports
+        run: |
+          npm start
+          mkdir -p lighthouse-report
+          cp -R lighthouse-report $GITHUB_WORKSPACE/temp_reports
 
       - name: Deploy reports to GitHub Pages
+        uses: actions/upload-artifact@v2
+        with:
+          name: lighthouse-reports
+          path: $GITHUB_WORKSPACE/temp_reports
+
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages
-          folder: lighthouse-report  
-          target-folder: tests/Reports/  
+          folder: lighthouse-report
+          target-folder: tests/Reports/
