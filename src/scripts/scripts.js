@@ -41,7 +41,7 @@ for (const condition of conditions) {
             },
         };
 
-        const runnerResult = await lighthouse(Data.Website.Amazon, options);
+        const runnerResult = await lighthouse(Data.Website.Burrow, options);
         const reportHtml = runnerResult.report;
 
         const reportFileName = `${formFactor}_${condition.label}_report.html`;
