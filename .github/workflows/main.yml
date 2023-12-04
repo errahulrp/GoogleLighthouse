@@ -22,8 +22,7 @@ jobs:
         run: npm install
 
       - name: Run Lighthouse script
-        run: |
-          node your-script-name.js  # Replace with the actual name of your script file
+        run: npm start
 
       - name: Deploy reports to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.4
