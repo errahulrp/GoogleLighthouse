@@ -16,17 +16,18 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v2
         with:
-          node-version: '18' 
+          node-version: '14'
 
       - name: Install dependencies
         run: npm install
 
       - name: Run Lighthouse script
-        run: npm start 
+        run: |
+          node your-script-name.js  # Replace with the actual name of your script file
 
       - name: Deploy reports to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages
-          folder: lighthouse-report
-          target-folder: tests/Reports/
+          folder: lighthouse-report  
+          target-folder: tests/Reports/  
