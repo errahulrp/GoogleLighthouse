@@ -1,0 +1,18 @@
+{
+  "name": "googlelighthouse",
+  "version": "1.0.0",
+  "description": "Puppeteer and JavaScript, this tool empowers developers to audit web app performance, accessibility, SEO, and more. Leveraging Puppeteer's automation, it provides comprehensive insights for optimizing site quality and user experience.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/scripts/scripts.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chrome-launcher": "^1.1.0",
+    "lighthouse": "^11.3.0",
+    "puppeteer": "^21.5.2"
+  }
+}
